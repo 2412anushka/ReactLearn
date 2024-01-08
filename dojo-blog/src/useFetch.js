@@ -24,7 +24,7 @@ const useFetch = (url) => {  // Name of a Hook needs to start with a 'use' word
                     setIsPending(false)
                     setError(err.message);  // Network Error
                 })
-        },(500))
+        },(50))
     },[url]); 
 
     return {data,error,isPending}

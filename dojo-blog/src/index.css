@@ -53,3 +53,7 @@
   color: rgb(73, 71, 71);
   font-size: 22px;
 }
+.blog-preview a{
+  text-decoration: none;
+  color: black;
+}
