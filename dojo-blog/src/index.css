@@ -57,3 +57,59 @@
   text-decoration: none;
   color: black;
 }
+.blog-details div{
+  padding-right: 100px;
+}
+.blog-details h4{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.blog-details h2{
+  color: rgb(223, 53, 110);
+  font-weight: lighter;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 365px;
+  width: 20vw;
+  padding: 20px;
+}
+.create h2{
+  color: palevioletred;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  margin-left: 460px;
+  /* text-align: center; */
+}
+form label{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+form input{
+  width: 20vw;
+  height: 3vh;
+}
+form textarea{
+  width: 20vw;
+  height: 5vh;
+}
+form select{
+  width: 20vw;
+  height: 3vh;
+}
+form button{
+  width: 5vw;
+  height: 4vh;
+  border-radius: 10px;
+  margin-top: 40px;
+  background-color: rgb(228, 84, 132);
+  color: white;
+  font-weight: bolder;
+  border: none;
+  font-size: 15px;
+  margin-left: 137px;
+  cursor: pointer;
+}
