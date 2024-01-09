@@ -3,7 +3,7 @@ import BlogList from './BlogList';
 import useFetch from './useFetch';
 
 const Home = () => {
-    const {data:blogs,error,isPending}=useFetch("https://my-json-server.typicode.com/2412anushka/ReactLearn/blogs")
+    const {data:blogs,error,isPending}=useFetch("http://localhost:8000/blogs")
     // let name=mario;
     // const [name,setName]=useState('Mario')
     // const [age,setAge]=useState(18)

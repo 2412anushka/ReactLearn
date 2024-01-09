@@ -1,20 +1,27 @@
 import {useState} from "react";
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const Create = () => {
     const [title,setTitle]=useState('')
     const [des,setDes]=useState('')
     const [author,setAuthor]=useState('Mario')
+    const [isPending,setIsPending]=useState(false)
+    const history=useHistory();
     const handleSubmit = (e) =>{
         e.preventDefault();
-        const blog={title,des,author};
+        const blog={title:title,des:des,author:author};
         // console.log(blog);
-        fetch("https://my-json-server.typicode.com/2412anushka/ReactLearn/blogs", {
+        setIsPending(true)
+        setTimeout(()=>{
+            fetch("http://localhost:8000/blogs", {
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(blog)
-        }).then(()=>{
-            console.log("new blog added");
+        }).then(() =>{
+            console.log('new blog added');
+            setIsPending(false)
+            history.push("/")
         })
+        },(1000))
     }
     return ( 
         <div className="create">
@@ -43,7 +50,8 @@ const Create = () => {
                     <option value="Michelle">Michelle</option>
                 </select>
                 
-                <button>Add a blog</button>
+                {!isPending && <button>Add a blog</button>}
+                {isPending && <button>Adding blog..</button>}
             </form>
         </div>
      );
