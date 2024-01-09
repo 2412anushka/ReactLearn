@@ -2,17 +2,17 @@ import {useState} from "react";
 
 const Create = () => {
     const [title,setTitle]=useState('')
-    const [body,setBody]=useState('')
+    const [des,setDes]=useState('')
     const [author,setAuthor]=useState('Mario')
     const handleSubmit = (e) =>{
         e.preventDefault();
-        const blog={title,body,author}
+        const blog={title,des,author};
+        // console.log(blog);
         fetch("https://my-json-server.typicode.com/2412anushka/ReactLearn/blogs", {
             method:'POST',
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(blog)
-        })
-        .then(()=>{
+        }).then(()=>{
             console.log("new blog added");
         })
     }
@@ -30,8 +30,8 @@ const Create = () => {
                 <label>Blog Description:</label>
                 <textarea 
                 required
-                value={body}
-                onChange={(e)=> setBody(e.target.value)}>
+                value={des}
+                onChange={(e)=> setDes(e.target.value)}>
                 </textarea>
                 <label>Blog Author:</label>
                 <select
@@ -42,6 +42,7 @@ const Create = () => {
                     <option value="Tom">Tom</option>
                     <option value="Michelle">Michelle</option>
                 </select>
+                
                 <button>Add a blog</button>
             </form>
         </div>
